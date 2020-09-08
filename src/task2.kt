@@ -1,7 +1,7 @@
 import kotlin.concurrent.thread
 
 fun main() {
-    fun periodically(f: () -> Unit, period: Long) {
+    fun periodically(period: Long, f: () -> Unit) {
         thread {
             while (true) {
                 f()
@@ -10,5 +10,5 @@ fun main() {
         }
     }
 
-    periodically({ println("foobar") }, 1000)
+    periodically(1000) { println("foobar") }
 }
